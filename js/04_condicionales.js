@@ -31,7 +31,7 @@ if (billetera > 0) {
 let cajaAhorros = 0;
 
 if (cajaAhorros > 0) {
-  console.log("Tienes dinero 😁");
+  console.log("Tienes dinero 😂");
 } else {
   console.log("No hay dinero en tu cuenta 😅");
 }
