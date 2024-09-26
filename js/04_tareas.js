@@ -49,9 +49,55 @@ if (!isNaN(monto)) {
 //Solo puede entrar personas de 18 años o mas
 //Sino debe entrar con un adulto responsable "tutor"
 
+let edad = 15;
+let tutor = false;
+
+if (edad >= 18) {
+  console.log("Bienvenido a la fiesta!");
+} else if (tutor) {
+  console.log("Puedes ingresar, en compañia de tu tutor!");
+} else {
+  console.log("No puede ingresar, por ser menor de edad!");
+}
+
+//* Otra forma, con operador or ||
+
+if (edad >= 18 || tutor) {
+  console.log("Bienvenido a la fiesta!");
+} else {
+  console.log("No puede ingresar!");
+}
+
 //------------------------------------------------------------------------------------------
 //? SWITCH
-//Ejercicio verduleria
+//* Ejercicio verduleria
 /*Pedir al usuario que ingrese un producto de verduleria.
 - en caso que este disponible ese producto: informar el valor del kilo
 - en caso de que el producto NO este disponible: informar al usuario que esta en falta */
+
+let mercaderia = prompt("Ingrese la mercaderia deseada!");
+
+switch (mercaderia) {
+  case "manzana":
+    //   case "MANZANA":
+    console.log("El precio del kilo de manzana es $500");
+
+    break;
+  case "durazno":
+    console.log("El precio del kilo de durazno es $800");
+
+    break;
+  case "naranja":
+    console.log("El precio del kilo de naranja es $700");
+
+    break;
+  case "frutilla":
+  case "mango":
+    console.log("El precio del kilo de frutilla o mango es $900");
+
+    break;
+
+  default:
+    console.log(`'Lo sentimos, no hay ${mercaderia}!`);
+    break;
+}
