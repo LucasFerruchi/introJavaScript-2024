@@ -108,3 +108,8 @@ switch (edad) {
 }
 
 //* El switch recibe en los casos VALORES, no puedo poner CONDICIONES.
+
+//? OPERADOR TERNARIO
+let edad1 = 15;
+let mensaje = edad1 >= 18 ? "Eres mayor de edad." : "Eres menor de edad.";
+console.log(mensaje);
