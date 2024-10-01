@@ -127,24 +127,3 @@ if (acierto == false) {
 //         console.log ("perdiste tus intentos")
 //     }
 // }
-
-//* ----------------------------------------------------
-//? DO WHILE
-
-//Ejercicio MULTITABLAS
-// let multiTabla = null;
-
-// do {
-//   multiTabla = parseInt(prompt("Ingrese la tabla a calcular"));
-//   if (multiTabla) {
-//     console.log("==================");
-//     console.log(`Tabla del ${multiTabla} 🤩`);
-//     console.log("==================");
-
-//     for (let i = 1; i <= 10; i++) {
-//       console.log(`${multiTabla} x ${i} = ${multiTabla * i}`);
-//     }
-//   } else {
-//     console.log("No es una tabla válida! 😪");
-//   }
-// } while (multiTabla);
