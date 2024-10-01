@@ -22,7 +22,7 @@ while (condicion){
 
 //Ejemplo
 
-let vecesAsumar = 5; //ITERADOR, dice cuantas veces se desata el bucle
+let vecesAsumar = 5; //ITERADOR, dice cuantas veces se desata el bucle y cuando se detiene
 let totalSuma = 0;
 
 while (vecesAsumar > 0) {
@@ -74,22 +74,22 @@ for (let i=0; i<=10; i++){
 
  */
 
-//Ejemplo:
-// for (let i = 0; i < 5; i++) {
-//   let nombre = prompt("Ingrese el nombre del alumno");
-//   console.log(`Bienvenido ${nombre} al equipo!💪`);
-// }
+// Ejemplo:
+for (let i = 0; i < 5; i++) {
+  let nombre = prompt("Ingrese el nombre del alumno");
+  console.log(`Bienvenido ${nombre} al equipo!💪`);
+}
 
 /*Tambien puedo crear una variable fuera del ciclo.
 y asi controlar la cantidad de veces que quiero que
 el ciclo se desate.Y colocarla en el segundo parametro*/
 
 //Ejemplo:
-// let cantidad = 3;
+let cantidad = 3;
 
-// for (let i = 0; i < cantidad; i++) {
-//   let nombre = prompt("Ingrese el nombre del participante");
-//   console.log(`Bienvenido ${nombre} al concurso!💪`);
-// }
+for (let i = 0; i < cantidad; i++) {
+  let nombre = prompt("Ingrese el nombre del participante");
+  console.log(`Bienvenido ${nombre} al concurso!💪`);
+}
 
 //! Porque no da error la variable nombre?
