@@ -1,6 +1,6 @@
 //? FUNCIONES
 /*Procedimientos encapsulados, 
-que se ejecutan cuando yo quiero que lo hagan 
+que se ejecutan cuando le damos la orden
 o el usuario desea*/
 
 //? TIPOS DE FUNCIONES
@@ -15,13 +15,13 @@ o el usuario desea*/
 /*
 Sintaxis
 
-function "nombre"("parametros"/puede o no tener parametros/){
+function nombre("parametros"/puede o no tener parametros/){
     "instrucciones / accion"
 }
 
 */
 
-//! Ejempli:
+//! Ejemplo:
 let nombre1 = "Santiago";
 let apellido1 = "Gonzalez";
 
@@ -43,13 +43,14 @@ dataCompleta();
 
 //* -----------------------------------------------------
 //! valores predeterminados en los parametros
-function sumarValores(valor1, valor2) {
+function sumarValores(valor1 = 2, valor2 = 2) {
   if (isNaN(valor1) || isNaN(valor2)) {
     console.warn("Algún valor ingresado no es un número!");
   } else {
     console.log(`${valor1} + ${valor2} = ${valor1 + valor2}`);
   }
 }
+sumarValores(45, 76);
 
 //? ---------------------------------------------------------
 //? ANONIMAS
@@ -66,6 +67,7 @@ saludarAlumno("Josefina");
 const cubo = (num) => {
   return Math.pow(num, 3);
 };
+
 console.log(cubo(7));
 
 //*--------------------------------------
@@ -84,3 +86,5 @@ const presentar = () => {
   let nombre3 = "Carolina";
   return `Bienvenido ${nombre3}`;
 };
+
+console.log(presentar());
