@@ -55,7 +55,7 @@ let separarElementos = alumnos.join(", ");
 console.log(separarElementos);
 
 //? UNIR ELEMENTOS
-let unirElementos = separarElementos.split(", ");
+let unirElementos = separarElementos.split(" ");
 console.log(unirElementos);
 
 //? AGREGAR
@@ -103,3 +103,10 @@ agrego una coma y luego los elementos que quiero agregar*/
 alumnos.splice(2, 3, "Alfredo", "Silvia", "Fernando");
 /*El 3 en este caso dice cuantos elermentos reemplazo*/
 console.log(alumnos);
+
+//? ORDENAR ALFABETICAMENTE
+
+console.log(alumnos.sort());
+
+//? ORDEN INVERSO
+console.log(alumnos.reverse());
