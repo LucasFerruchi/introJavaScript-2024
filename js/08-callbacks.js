@@ -1,32 +1,40 @@
+//? CALLBACKS:
+/*Metodos o funciones dentro de otro metodo o funcion */
 
-// function multiplicar(numero) {
-//     return numero * 2
-// }
+function multiplicar(numero) {
+  return numero * 2;
+}
 
-// const numeros = [1, 2, 3, 4, 5];
+const numeros = [1, 34, 2, 76, 45, 198, 3, 340, 4, 87, 62, 5];
+console.log(numeros);
 
-// Callback sincrono: Se ejecuta inmediatamente en orden que son llamados
-// function procesarNumeros(numeros, multiplicar) {
-//     const resultado = []
-//     for (let i = 0; i < numeros.length; i++) {
-//         resultado.push(multiplicar(numeros[i]))
-//     }
-//     return resultado
-// }
+//? Callback sincrono:
+/*Se ejecuta inmediatamente en orden que son llamados*/
 
-// console.log(procesarNumeros(numeros, multiplicar))
+function procesarNumeros(numeros, multiplicar) {
+  const resultado = [];
+  for (let i = 0; i < numeros.length; i++) {
+    resultado.push(multiplicar(numeros[i]));
+  }
+  return resultado;
+}
 
-// Callbacks asincronos: se ejecuntan despues de un tiempo, generalmente sirven para funciones que no sabemos cuando termiaran (ej, llamadas a servidores)
+console.log(procesarNumeros(numeros, multiplicar));
 
-// function mostrarMensaje() {
-//     console.log("Hola soy un mensaje, despues de 3 segundos")
-//     setTimeout(() => { console.log("mensaje despues de 1 segundo") }, 1000)
-// }
+//? Callbacks asincronos:
+/*se ejecuntan despues de un tiempo, generalmente sirven 
+para funciones que no sabemos cuando termiaran (ej, llamadas a servidores)*/
 
-// setTimeout(mostrarMensaje, 3000)
+function mostrarMensaje() {
+  console.log("Hola soy un mensaje, despues de 3 segundos");
+  setTimeout(() => {
+    console.log("mensaje despues de 1 segundo");
+  }, 1000);
+}
 
-// mostrarMensaje()
+setTimeout(mostrarMensaje, 3000);
 
+mostrarMensaje();
 
 // console.log("Mensaje 1")
 // setTimeout(() => {
@@ -34,76 +42,99 @@
 // }, 3000)
 // console.log("Mensaje 3")
 
-// Problemas potenciales (Callback Hell)
-// Si no se organizan bien, los callbacks pueden dar lugar a un fenómeno llamado callback hell, donde las funciones se anidan de forma excesiva, creando código difícil de leer y mantener.
+//! Problemas potenciales (Callback Hell)
+/* Si no se organizan bien, 
+los callbacks pueden dar lugar a un fenómeno llamado callback hell, 
+donde las funciones se anidan de forma excesiva, 
+creando código difícil de leer y mantener.*/
+
 // doSomething(function (result) {
-//     doSomethingElse(result, function (newResult) {
-//         doThirdThing(newResult, function (finalResult) {
-//             console.log('Todo hecho.');
-//         });
+//   doSomethingElse(result, function (newResult) {
+//     doThirdThing(newResult, function (finalResult) {
+//       console.log("Todo hecho.");
 //     });
+//   });
 // });
-// Para mitigar este problema, existen soluciones como las promesas y la sintaxis async/await, pero esas son cuestiones más avanzadas.
 
+/* Para mitigar este problema, 
+existen soluciones como las promesas y la sintaxis async/await, 
+pero esas son cuestiones más avanzadas.*/
 
-// METODOS DE ARRAYS
+//? METODOS DE ARRAYS
 
-// Metodo .SORT()
+//? .sort()
 // ordena en orden alfabetico, de mayor a menor o al reves
 
+const nombres = [
+  "juan",
+  "erick",
+  "celia",
+  "rodrigo",
+  "ana",
+  "alba",
+  "marcelo",
+  "joaquin",
+];
 
-// let nombresOrdenados = nombres.sort()
-// console.log(nombresOrdenados)
+let nombresOrdenados = nombres.sort();
+console.log(nombresOrdenados);
 
-// let numerosOrdenados = numeros.sort(function (a, b) {
-//     return a - b
-// })
+//? .sort() en NUMBERS
+// ver que pasa con un array de numeros
 
-// console.log(numerosOrdenados)
+let numSort = numeros.sort();
+console.log(numSort);
 
-// Metodo .filter()
+let numerosOrdenados = numeros.sort(function (a, b) {
+  return a - b;
+});
+
+console.log(numerosOrdenados);
+
+//? .filter()
 // devuelve todos los elementos que cumplan con el filtro
-// let pares = numeros.filter((numero) => {
-//     return numero > 100
-// })
 
-// console.log(pares)
+let mayoresCien = numeros.filter((numero) => {
+  return numero > 100;
+});
 
-// Metodo .find()
+console.log(mayoresCien);
+
+//? .find()
 // devuelve el primer elemento que cumpla con la condicion
-// let busquedaNombre = nombres.find((nombre) => {
-//     return nombre.startsWith("J")
-// })
 
-// console.log(busquedaNombre)
+let busquedaNombre = nombres.find((nombre) => {
+  return nombre.startsWith("j");
+});
 
+console.log(busquedaNombre);
 
-// Metodo .findIndex()
+//? .findIndex()
 // recorre todo el Array, y devuelve el indice del elemento que cumpla la condicion
 
-// let indice = nombres.findIndex((nombre) => {
-//     return nombre === "Antonio"
-// })
+let indice = nombres.findIndex((nombre) => {
+  //return nombre === "erick";
+  return nombre === "Antonio"; //! devuelve "-1" cuando NO ENCUENTRA LO BUSCADO
+});
 
-// console.log(indice)
+console.log(indice);
 
-const numeros = [95, 46, 2, 67, 63, 612, 4, 874]
+const numeros1 = [95, 46, 2, 67, 63, 612, 4, 874];
 
-const nombres = ["Joaquin", "Lionel", "Angel", "Antonio", "Emiliano"]
+const nombres1 = ["Joaquin", "Lionel", "Angel", "Antonio", "Emiliano"];
 
-// Metodo .forEach()
+//? .forEach()
 // recorre todo el array y realiza una funcion por cada elemento
 
-// nombres.forEach((nombre) => {
-//     console.log(nombre)
-// })
+nombres.forEach((nombre) => {
+  console.log(`Buenas tardes! soy ${nombre}`);
+});
 
+//? .map()
+// recorre todo el array y devuelve uno nuevo
 
-// Metodo .map()
-// recorre todo el array y devuelve uno nuevo 
+let resultados = numeros.map((numero) => {
+  return numero + 1;
+});
 
-// let resultados = numeros.map((numero) => {
-//     return numero + 1
-// })
-
-// console.log(resultados)
+console.log(resultados);
