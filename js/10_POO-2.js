@@ -3,6 +3,8 @@
 //CLASS
 
 /*
+Sintaxis:
+
 class Nombre {
     constructor (a,b,c){
         Propiedades
@@ -19,85 +21,79 @@ class Nombre {
 
 */
 
-//--------------------------------------------------------
+//-----------------------------------------------------------------
+//? CLASE
 
 class Usuario {
-  constructor(nombre, username, mail, password, estado = true) {
-    this.nombre = nombre;
+  //CONSTRUCTOR
+  constructor(name, username, mail, password, estado = true) {
+    //PROPIEDADES
+    this.name = name;
     this.username = username;
     this.mail = mail;
     this.password = password;
     this.estado = estado;
   }
 
-  //? Funcion de presentacion
+  //FUNCIONES
   presentacion() {
-    console.log(`Nombre: ${this.nombre}`);
+    console.log(`Nombre: ${this.name}`);
     console.log(`Usuario: ${this.username}`);
   }
 
-  //? Funcion para cambiar el estado
   cambiarEstado() {
-    // this.estado = true;
     this.estado = !this.estado;
   }
 }
 
-let user1 = new Usuario("Lucas", "lferruchi", "lucas@lucas.com", "123456");
+let user1 = new Usuario("lucas", "lferruchi", "lucas@lucas.com", "123456");
 console.log(user1);
-//Funcion de la clase
-user1.presentacion();
 
-let user2 = new Usuario("Luciana", "lu1234", "lu@luci.com", "laknsd764w4lkn");
+user1.cambiarEstado();
+
+let user2 = new Usuario("lucas1", "lferruch5", "lucas@lucas.com1", "1234567");
 console.log(user2);
-//Funcion dentro de la clase
-user2.cambiarEstado();
 
-//Funcion por FUERA de la clase ------------------------------------
+user2.presentacion();
+
+//? Funcion por FUERA de la clase ---------------------------------
 
 Usuario.prototype.saludar = function () {
-  console.log(`Hola soy ${this.nombre}!`);
+  console.log(`Hola soy ${this.name}`);
 };
 
 user1.saludar();
 user2.saludar();
 
-//! HERENCIA
-//? Administradores
+//? HERENCIA
 
 class Administrador extends Usuario {
-  constructor(nombre, username, mail, password, rol, estado = true) {
-    super(nombre, username, mail, password, estado);
+  constructor(name, username, mail, password, rol, estado = true) {
+    super(name, username, mail, password, estado);
     this.rol = rol;
   }
 
-  //Funcion nueva
   presentacionAdmin() {
     this.presentacion();
-    console.log(`Cargo: ${this.rol}`);
+    console.log(`Puesto: ${this.rol}`);
   }
 }
 
-//Perfil nuevo - administrador
 let admin1 = new Administrador(
-  "Gustavo",
-  "gus2024",
-  "gustavo@gus.com",
-  "123456",
+  "lucas2",
+  "lferruchi2",
+  "lucas@lucas.com2",
+  "12345678",
   "Administrador"
 );
 console.log(admin1);
 
-//Funcion del administrador
 admin1.presentacionAdmin();
 
-//Funciones heredadas de Usuario
-admin1.presentacion();
-admin1.cambiarEstado();
-
 //------------------------------------------------------------------
-// ------------------------------------------------------------------------------------------
-//Ejercicio cuenta bancaria
+// -----------------------------------------------------------------
+//! Ejercicio cuenta bancaria
+
 /*Escribe un "programa que cree un objeto" - se llamara: "cuenta",
   con las siguientes propiedades:
   -una propiedad titular
@@ -116,7 +112,6 @@ admin1.cambiarEstado();
   y volver a mostrar la descripcion del estad de la cuenta*/
 
 //! -----------------------------------------------------------------------
-//A-Crear clase Cuenta
 
 class Cuenta {
   constructor(titular, saldo = 0) {
@@ -124,31 +119,27 @@ class Cuenta {
     this.saldo = saldo;
   }
 
-  //Metodo ingresar
   ingresar(cantidad = 0) {
     if (cantidad > 0) {
       // this.saldo = this.saldo + cantidad;
       this.saldo += cantidad;
-      console.log(`Se ingresaron $${cantidad} a la cuenta de ${this.titular}`);
+      console.log(`Se ingresaron ${cantidad} a la cuenta de ${this.titular}`);
       this.informar();
     } else {
-      console.log("La cantidad ingresada debe ser mayor a cero.");
+      console.log("La cantidd ingresada debe ser mayor a 0");
     }
   }
 
-  //Metodo extraer
   extraer(cantidad) {
-    if (cantidad > 0 && cantidad <= this.saldo) {
-      // this.saldo = this.saldo - cantidad;
+    if (cantidad > 0 && this.saldo >= cantidad) {
       this.saldo -= cantidad;
-      console.log(`Se extrajo $${cantidad}de la cuenta de ${this.titular}`);
+      console.log(`Se extrajo ${cantidad}`);
       this.informar();
     } else {
-      console.log("La cantidad ingresada es invalida!");
+      console.log("La cantidad es invalida");
     }
   }
 
-  //b-Informar
   informar() {
     console.log("----Estado de cuenta----");
     console.log(`Titular: ${this.titular}`);
@@ -157,17 +148,9 @@ class Cuenta {
   }
 }
 
-//Cuenta 1
-const cuenta1 = new Cuenta("Ignacio");
+let cuenta1 = new Cuenta("Jose");
 console.log(cuenta1);
 
-//Informar estado de cuenta
-cuenta1.informar();
+cuenta1.ingresar(50000);
 
-//Ingresar
-cuenta1.ingresar(150);
-
-//Extraer
-cuenta1.extraer(50);
-
-//! crear nueva cuenta "cuenta2"
+cuenta1.extraer(-6000000);
