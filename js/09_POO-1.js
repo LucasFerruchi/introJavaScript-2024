@@ -133,6 +133,14 @@ let data = [
     last_name: "Edwards",
     avatar: "http://reqres.in/img/faces/11-image.jpg",
   },
+  {
+    id: 11,
+    email: "lucas@lucas.com",
+    first_name: "Lucas",
+    last_name: "Ferruchi",
+    avatar:
+      "https://www.bing.com/images/search?view=detailV2&ccid=pi9O%2bQF%2b&id=A4DFC305B03C9733411D4A5D10658F203D985A17&thid=OIP.pi9O-QF-rlyzd6UmOamEJgHaHa&mediaurl=https%3a%2f%2fi1.sndcdn.com%2favatars-000074600477-ov4aij-t500x500.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.a62f4ef9017eae5cb377a52639a98426%3frik%3dF1qYPSCPZRBdSg%26pid%3dImgRaw%26r%3d0&exph=500&expw=500&q=lucas+ferruchi&simid=608019700450992003&FORM=IRPRST&ck=28EB915694F144B343CDB3DB66B8F6EE&selectedIndex=0&itb=0",
+  },
 ];
 
 console.log(data);
@@ -147,13 +155,53 @@ console.log(data);
 
   */
 
+const tarjetaPresentacion = () => {
+  //1-recorro el arreglo
+  data.forEach((alumno) => {
+    // console.log(alumno.last_name);
+
+    //Imprimir en pantalla
+    document.write(`<strong>---Tarjeta de presentación---</strong><br/>
+      <h3>Nombre: ${alumno.first_name} ${alumno.last_name}</h3>
+      <h3>Correo: ${alumno.email}</h3>`);
+  });
+};
+
+tarjetaPresentacion();
+
 // ------------------------------------------------------------------------------------------
 /*Ejercicio: mostrar una lista
   de los nombres y apellidos de los usuarios
-  en orden alfabetico por apellido */
+  en orden alfabetico por apellido - .sort()*/
 
 //! Obteniendo un arreglo de "objetos"
 
+const listaUsuarios1 = () => {
+  let usuarios = data.map((usuario) => {
+    return {
+      apellido: usuario.last_name,
+      nombre: usuario.first_name,
+      correo: usuario.email,
+    };
+  });
+
+  // console.log(usuarios);
+
+  //Ordenar alfabeticamente
+  usuarios.sort((a, b) => {
+    if (a.apellido > b.apellido) {
+      return 1;
+    } else if (a.apellido < b.apellido) {
+      return -1;
+    } else {
+      return 0; //cuando son igual
+    }
+  });
+  console.log(usuarios);
+};
+
+listaUsuarios1();
+
 // ------------------------------------------------------------------------------------------
 //! Obteniendo un arreglo de "string"
-//Ejercicio: Convertir a string y devolver una lista enumerada
+//Ejercicio: Convertir a string por orden alfabetico y devolver una lista enumerada
