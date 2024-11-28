@@ -1,0 +1,29 @@
+
+
+  .colorFooter {
+    background-color: rgb(241, 236, 231);
+  }
+  
+  .logoSize {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .socialSize {
+    font-size: 23px;
+
+  }
+  
+  a {
+    text-decoration: none;
+    color: rgb(58, 61, 74);
+  }
+  
+  .jost {
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+    font-size: 17px;
+    color: rgb(15, 23, 23);
+  }
