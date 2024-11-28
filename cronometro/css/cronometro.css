@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+.numero{
+    font-size: 80px;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.titulo{
+    font-size: 15vh;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.boton 
+{
+    width: 60%;
+    height: 60px;
+    font-family: "Bebas Neue", serif;
+}
+
+#inicio
+{
+    background-color: rgb(24, 177, 0);
+    color: aliceblue;
+    
+}
+#inicio:hover
+{
+    transition: 0.2s;
+    background-color:rgb(19, 128, 2);
+    
+}
+
+
+
+#parar
+{
+    background-color: rgb(220, 26, 26);
+    color: aliceblue;
+
+    
+}
+
+#parar:hover
+{
+    transition: 0.2s;
+    background-color:rgb(158, 10, 10);
+    
+    
+}
+
+#continuar
+{
+    background-color: rgb(9, 181, 233);
+    color: aliceblue;
+}
+
+#continuar:hover
+{
+    transition: 0.2s;
+    background-color:rgb(6, 103, 132);
+    
+    
+}
+
+#reinicio
+{
+    background-color: rgb(149, 49, 255);
+    color: aliceblue;
+}
+
+#reinicio:hover
+{
+    transition: 0.2s;
+    background-color:rgb(114, 16, 219);
+    
+    
+}
+
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 70px;
+    }
+
+    .numero {
+        font-size: 70px;
+    }
+
+    .boton {
+        height: 50px;
+   
+    }
+}
+
+
+
+
+
